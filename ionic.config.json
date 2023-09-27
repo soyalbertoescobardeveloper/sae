@@ -1,0 +1,8 @@
+{
+  "name": "SAE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "06ee3fe6"
+}
