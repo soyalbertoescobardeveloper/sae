@@ -10,6 +10,9 @@ const routes: Routes = [
     path: 'message/:id',
     loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
   },
+  { path: 'datail-pax/:id', 
+    loadChildren: () => import('./detail-pax/detail-pax.module').then(m => m.DetailPaxModule) },
+
   {
     path: '',
     redirectTo: 'home',

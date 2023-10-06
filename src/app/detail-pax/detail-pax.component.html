@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content   [fullscreen]="true" *ngIf="message">
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Pax</ion-card-title>
+    <ion-card-subtitle>Documents</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Passport</ion-label>
+        <h4>Date: <ion-note>12/04/2019</ion-note></h4>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Visa</ion-label>
+        <h4>Date: <ion-note>12/04/2019</ion-note></h4>
+      </ion-item>
+
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-content>

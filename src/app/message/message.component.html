@@ -1,16 +1,28 @@
-<ion-item *ngIf="message" [routerLink]="'/message/' + message.id" [detail]="false">
+<ion-item *ngIf="message" [routerLink]="'/message/' + message.id">
   <div slot="start" [class]="!message.read ? 'dot dot-unread' : 'dot'"></div>
   <ion-label class="ion-text-wrap">
+    <ion-card-title>ID Operación: {{message.id}}</ion-card-title>
     <h2>
-      {{ message.fromName }}
+      Route: {{message.airportDeparture}} - {{message.airportArrival}} 
       <span class="date">
-        <ion-note>{{ message.date }}</ion-note>
+        <ion-note>{{ message.tail}}</ion-note>
         <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
       </span>
     </h2>
-    <h3>{{ message.subject }}</h3>
+    <h3> Flight Type: {{message.flightType}} </h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      ETD UTC:  {{message.etd}}
+    </p>
+    <p>
+      ETA UTC:  {{message.eta}}
     </p>
   </ion-label>
   </ion-item>
+  <!-- <ion-accordion-group>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>More Details</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">First Content</div>
+  </ion-accordion>
+</ion-accordion-group> -->

@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Inbox
+    <ion-title style="color: #030A8C;">
+      <ion-icon src = "../../assets/icon/logo-sae.svg" size="large"></ion-icon>
+      SAE Handling 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,13 +14,14 @@
   
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">
-        Inbox
+      <ion-title size="large" style="color: #030A8C;">
+        <ion-icon src = "../../assets/icon/logo-sae.svg" size="large"></ion-icon>
+        SAE Operation
       </ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <app-message *ngFor="let message of messages" [message]="message"></app-message>
   </ion-list>
 </ion-content>
