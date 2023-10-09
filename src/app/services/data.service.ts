@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface Message {
   fromName: string;
@@ -19,31 +21,21 @@ export interface Message {
   providedIn: 'root'
 })
 export class DataService {
-  public messages: Message[] = [
-    {
-      fromName: '189',
-      subject: 'New event: Trip to Vegas',
-      date: 'PART 91',
-      id: 0,
-      read: false,
-      tail: 'Tai test',
-      airportDeparture: 'MMZO',
-      airportArrival: 'MMTO',
-      eta: '12/07/2023',
-      etd: '12/07/2023',
-      flightType: 'Diplomatic',
-      status: 0,
-    },
-   
-  ];
+  public messages: Message[] = [];
 
-  constructor() { }
+  private apiUrl = 'http://sae-handling-v1.test/api/';
+
+  constructor(private http: HttpClient) {}
+
+  getOperationById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}get-operation/${id}`);
+  }
 
   public getMessages(): Message[] {
     return this.messages;
   }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
+  public getMessageById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}get-operation/${id}`);
   }
 }
